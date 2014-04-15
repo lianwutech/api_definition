@@ -1284,6 +1284,537 @@
                 
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                            <h3 id="_projects__projectId__services" class="panel-title">/projects/{projectId}/services</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            
+                                <div class="resource-description">
+                                    <p>以业务为根</p>
+
+                                </div>
+                            
+
+                            <div class="panel-group">
+                                <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services">
+                
+                    <span class="badge badge_get">get</span>
+                
+                    <span class="badge badge_post">post</span>
+                
+                <span class="parent"></span>/projects/{projectId}/services
+            </a>
+        </h4>
+    </div>
+    <div id="panel__projects__projectId__services" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services_get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取业务列表
+                    </a>
+                    <div id="_projects__projectId__services_get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services_get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services_get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services_get_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services_get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回业务列表，列表中的每个条目按以下定义：</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务&quot;,
+  &quot;properties&quot;: {
+    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
+    &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
+          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
+}
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Example:</strong>
+                                                                <pre>{
+  &quot;service_id&quot;: 1,
+  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services_post" class="list-group-item">
+                        <span class="badge badge_post">post</span>
+                        创建新业务，service_id由服务器生成，此处不需提供
+                    </a>
+                    <div id="_projects__projectId__services_post" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services_post_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services_post_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services_post_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                        <h3>Body</h3>
+                                        
+                                            <p><strong>Type: application/json</strong></p>
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Schema:</strong>
+                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务&quot;,
+  &quot;properties&quot;: {
+    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
+    &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
+          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
+}
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Example:</strong>
+                                                        <pre>{
+  &quot;service_id&quot;: 1,
+  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                        
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services_post_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>业务创建成功</p>
+
+
+                                            
+
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services__serviceId_">
+                
+                    <span class="badge badge_get">get</span>
+                
+                    <span class="badge badge_post">post</span>
+                
+                    <span class="badge badge_delete">delete</span>
+                
+                <span class="parent">/projects/{projectId}/services</span>/{serviceId}
+            </a>
+        </h4>
+    </div>
+    <div id="panel__projects__projectId__services__serviceId_" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取单个业务
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__get_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回对应的业务</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务&quot;,
+  &quot;properties&quot;: {
+    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
+    &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
+          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
+}
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Example:</strong>
+                                                                <pre>{
+  &quot;service_id&quot;: 1,
+  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__post" class="list-group-item">
+                        <span class="badge badge_post">post</span>
+                        更新业务
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__post" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__post_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__post_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__post_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                        <h3>Body</h3>
+                                        
+                                            <p><strong>Type: application/json</strong></p>
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Schema:</strong>
+                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务&quot;,
+  &quot;properties&quot;: {
+    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
+    &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
+          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
+        }
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
+}
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Example:</strong>
+                                                        <pre>{
+  &quot;service_id&quot;: 1,
+  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                        
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__post_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>业务更新成功</p>
+
+
+                                            
+
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__delete" class="list-group-item">
+                        <span class="badge badge_delete">delete</span>
+                        删除业务
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__delete" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__delete_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__delete_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__delete_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__delete_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>业务删除成功</p>
+
+
+                                            
+
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
                             <h3 id="_projects__projectId__gateways_gatewayId__devices" class="panel-title">/projects/{projectId}/gateways{gatewayId}/devices</h3>
                         </div>
 
@@ -1858,1041 +2389,6 @@
                 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 id="_projects__projectId__services" class="panel-title">/projects/{projectId}/services</h3>
-                        </div>
-
-                        <div class="panel-body">
-                            
-                                <div class="resource-description">
-                                    <p>以业务为根</p>
-
-                                </div>
-                            
-
-                            <div class="panel-group">
-                                <div class="panel panel-white">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services">
-                
-                    <span class="badge badge_get">get</span>
-                
-                    <span class="badge badge_post">post</span>
-                
-                <span class="parent"></span>/projects/{projectId}/services
-            </a>
-        </h4>
-    </div>
-    <div id="panel__projects__projectId__services" class="panel-collapse collapse">
-        <div class="panel-body">
-            <div class="list-group">
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services_get" class="list-group-item">
-                        <span class="badge badge_get">get</span>
-                        获取业务列表
-                    </a>
-                    <div id="_projects__projectId__services_get" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services_get_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services_get_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services_get_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services_get_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>返回业务列表，列表中的每个条目按以下定义：</p>
-
-
-                                            
-
-                                            
-                                                <h3>Body</h3>
-                                                
-                                                    <p><strong>Type: application/json</strong></p>
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Schema:</strong>
-                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务&quot;,
-  &quot;properties&quot;: {
-    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_type_id&quot;: {
-      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
-      &quot;type&quot;: &quot;integer&quot;
-    },
-    &quot;active_rule_id&quot;: {
-      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
-      &quot;type&quot;: &quot;integer&quot;,
-      &quot;default&quot;: 0
-    },
-    &quot;operation_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-        &quot;control_status&quot;: {
-          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
-          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
-        }
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
-}
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Example:</strong>
-                                                                <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services_post" class="list-group-item">
-                        <span class="badge badge_post">post</span>
-                        创建新业务，service_id由服务器生成，此处不需提供
-                    </a>
-                    <div id="_projects__projectId__services_post" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services_post_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services_post_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services_post_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                        <h3>Body</h3>
-                                        
-                                            <p><strong>Type: application/json</strong></p>
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Schema:</strong>
-                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务&quot;,
-  &quot;properties&quot;: {
-    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_type_id&quot;: {
-      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
-      &quot;type&quot;: &quot;integer&quot;
-    },
-    &quot;active_rule_id&quot;: {
-      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
-      &quot;type&quot;: &quot;integer&quot;,
-      &quot;default&quot;: 0
-    },
-    &quot;operation_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-        &quot;control_status&quot;: {
-          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
-          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
-        }
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
-}
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Example:</strong>
-                                                        <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                        
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services_post_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>业务创建成功</p>
-
-
-                                            
-
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <div class="panel panel-white">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services__serviceId_">
-                
-                    <span class="badge badge_get">get</span>
-                
-                    <span class="badge badge_post">post</span>
-                
-                    <span class="badge badge_delete">delete</span>
-                
-                <span class="parent">/projects/{projectId}/services</span>/{serviceId}
-            </a>
-        </h4>
-    </div>
-    <div id="panel__projects__projectId__services__serviceId_" class="panel-collapse collapse">
-        <div class="panel-body">
-            <div class="list-group">
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__get" class="list-group-item">
-                        <span class="badge badge_get">get</span>
-                        获取单个业务
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__get" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__get_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__get_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__get_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__get_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>返回对应的业务</p>
-
-
-                                            
-
-                                            
-                                                <h3>Body</h3>
-                                                
-                                                    <p><strong>Type: application/json</strong></p>
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Schema:</strong>
-                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务&quot;,
-  &quot;properties&quot;: {
-    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_type_id&quot;: {
-      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
-      &quot;type&quot;: &quot;integer&quot;
-    },
-    &quot;active_rule_id&quot;: {
-      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
-      &quot;type&quot;: &quot;integer&quot;,
-      &quot;default&quot;: 0
-    },
-    &quot;operation_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-        &quot;control_status&quot;: {
-          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
-          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
-        }
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
-}
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Example:</strong>
-                                                                <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__post" class="list-group-item">
-                        <span class="badge badge_post">post</span>
-                        更新业务
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__post" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__post_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__post_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__post_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                        <h3>Body</h3>
-                                        
-                                            <p><strong>Type: application/json</strong></p>
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Schema:</strong>
-                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务&quot;,
-  &quot;properties&quot;: {
-    &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;service_type_id&quot;: {
-      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
-      &quot;type&quot;: &quot;integer&quot;
-    },
-    &quot;active_rule_id&quot;: {
-      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
-      &quot;type&quot;: &quot;integer&quot;,
-      &quot;default&quot;: 0
-    },
-    &quot;operation_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-        &quot;control_status&quot;: {
-          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
-          &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
-        }
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
-}
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Example:</strong>
-                                                        <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                        
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__post_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>业务更新成功</p>
-
-
-                                            
-
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__delete" class="list-group-item">
-                        <span class="badge badge_delete">delete</span>
-                        删除业务
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__delete" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__delete_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__delete_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__delete_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__delete_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>业务删除成功</p>
-
-
-                                            
-
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 id="_projects__projectId__services__serviceId__rules" class="panel-title">/projects/{projectId}/services/{serviceId}/rules</h3>
-                        </div>
-
-                        <div class="panel-body">
-                            
-
-                            <div class="panel-group">
-                                <div class="panel panel-white">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services__serviceId__rules">
-                
-                    <span class="badge badge_get">get</span>
-                
-                    <span class="badge badge_post">post</span>
-                
-                <span class="parent"></span>/projects/{projectId}/services/{serviceId}/rules
-            </a>
-        </h4>
-    </div>
-    <div id="panel__projects__projectId__services__serviceId__rules" class="panel-collapse collapse">
-        <div class="panel-body">
-            <div class="list-group">
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules_get" class="list-group-item">
-                        <span class="badge badge_get">get</span>
-                        获取业务规则列表
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__rules_get" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules_get_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__rules_get_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules_get_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules_get_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>返回业务规则列表，列表中的每个条目按以下定义：</p>
-
-
-                                            
-
-                                            
-                                                <h3>Body</h3>
-                                                
-                                                    <p><strong>Type: application/json</strong></p>
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Schema:</strong>
-                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务规则&quot;,
-  &quot;properties&quot;: {
-    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;process_code&quot;: {
-      &quot;properties&quot;: {
-      }
-    },
-    &quot;process_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
-}
-
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Example:</strong>
-                                                                <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules_post" class="list-group-item">
-                        <span class="badge badge_post">post</span>
-                        创建新业务规则，rule_id由服务器生成，此处不需提供
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__rules_post" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules_post_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__rules_post_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules_post_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                        <h3>Body</h3>
-                                        
-                                            <p><strong>Type: application/json</strong></p>
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Schema:</strong>
-                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务规则&quot;,
-  &quot;properties&quot;: {
-    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;process_code&quot;: {
-      &quot;properties&quot;: {
-      }
-    },
-    &quot;process_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
-}
-
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Example:</strong>
-                                                        <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                        
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules_post_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>业务规则创建成功</p>
-
-
-                                            
-
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <div class="panel panel-white">
-    <div class="panel-heading">
-        <h4 class="panel-title">
-            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services__serviceId__rules__ruleId_">
-                
-                    <span class="badge badge_get">get</span>
-                
-                    <span class="badge badge_post">post</span>
-                
-                    <span class="badge badge_delete">delete</span>
-                
-                <span class="parent">/projects/{projectId}/services/{serviceId}/rules</span>/{ruleId}
-            </a>
-        </h4>
-    </div>
-    <div id="panel__projects__projectId__services__serviceId__rules__ruleId_" class="panel-collapse collapse">
-        <div class="panel-body">
-            <div class="list-group">
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules__ruleId__get" class="list-group-item">
-                        <span class="badge badge_get">get</span>
-                        获取单个业务规则
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__rules__ruleId__get" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules__ruleId__get_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__rules__ruleId__get_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules__ruleId__get_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                                <li><strong>ruleId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules__ruleId__get_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>返回对应的业务规则</p>
-
-
-                                            
-
-                                            
-                                                <h3>Body</h3>
-                                                
-                                                    <p><strong>Type: application/json</strong></p>
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Schema:</strong>
-                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务规则&quot;,
-  &quot;properties&quot;: {
-    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;process_code&quot;: {
-      &quot;properties&quot;: {
-      }
-    },
-    &quot;process_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
-}
-
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                    
-                                                        <p>
-                                                            <small>
-                                                                <strong>Example:</strong>
-                                                                <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                            </small>
-                                                        </p>
-                                                    
-                                                
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules__ruleId__post" class="list-group-item">
-                        <span class="badge badge_post">post</span>
-                        更新业务规则
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__rules__ruleId__post" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules__ruleId__post_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__rules__ruleId__post_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules__ruleId__post_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                                <li><strong>ruleId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                        <h3>Body</h3>
-                                        
-                                            <p><strong>Type: application/json</strong></p>
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Schema:</strong>
-                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
-  &quot;type&quot;: &quot;object&quot;,
-  &quot;description&quot;: &quot;业务规则&quot;,
-  &quot;properties&quot;: {
-    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
-    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
-    &quot;process_code&quot;: {
-      &quot;properties&quot;: {
-      }
-    },
-    &quot;process_params&quot;: {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;properties&quot;: {
-      }
-    }
-  },
-  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
-}
-
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                            
-                                                <p>
-                                                    <small>
-                                                        <strong>Example:</strong>
-                                                        <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
-}
-</pre>
-                                                    </small>
-                                                </p>
-                                            
-                                        
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules__ruleId__post_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>业务规则更新成功</p>
-
-
-                                            
-
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules__ruleId__delete" class="list-group-item">
-                        <span class="badge badge_delete">delete</span>
-                        删除业务规则
-                    </a>
-                    <div id="_projects__projectId__services__serviceId__rules__ruleId__delete" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules__ruleId__delete_request" data-toggle="tab">Request</a></li>
-                                
-                                    <li><a href="#_projects__projectId__services__serviceId__rules__ruleId__delete_response" data-toggle="tab">Response</a></li>
-                                
-                            </ul>
-
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules__ruleId__delete_request">
-                                    
-                                        <h3>URI Parameters</h3>
-                                        <ul>
-                                            
-                                                <li><strong>projectId</strong>: integer</li>
-                                            
-                                                <li><strong>serviceId</strong>: integer</li>
-                                            
-                                                <li><strong>ruleId</strong>: integer</li>
-                                            
-                                        </ul>
-                                    
-
-                                    
-
-                                    
-                                </div>
-
-                                
-                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules__ruleId__delete_response">
-                                        
-                                            <h2>HTTP status code 200</h2>
-                                            <p>业务规则删除成功</p>
-
-
-                                            
-
-                                            
-                                        
-                                    </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
                             <h3 id="_projects__projectId__services__serviceId__schedules" class="panel-title">/projects/{projectId}/services/{serviceId}/schedules</h3>
                         </div>
 
@@ -3010,9 +2506,9 @@
                                                             <small>
                                                                 <strong>Example:</strong>
                                                                 <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+  &quot;schedule_id&quot;: 1,
+  &quot;schedule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;schedule_desc&quot;: &quot;描述可以为空&quot;
 }
 </pre>
                                                             </small>
@@ -3108,9 +2604,9 @@
                                                     <small>
                                                         <strong>Example:</strong>
                                                         <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+  &quot;schedule_id&quot;: 1,
+  &quot;schedule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;schedule_desc&quot;: &quot;描述可以为空&quot;
 }
 </pre>
                                                     </small>
@@ -3257,9 +2753,9 @@
                                                             <small>
                                                                 <strong>Example:</strong>
                                                                 <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+  &quot;schedule_id&quot;: 1,
+  &quot;schedule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;schedule_desc&quot;: &quot;描述可以为空&quot;
 }
 </pre>
                                                             </small>
@@ -3357,9 +2853,9 @@
                                                     <small>
                                                         <strong>Example:</strong>
                                                         <pre>{
-  &quot;service_id&quot;: 1,
-  &quot;service_name&quot;: &quot;番茄一号大棚&quot;,
-  &quot;service_desc&quot;: &quot;描述可以为空&quot;
+  &quot;schedule_id&quot;: 1,
+  &quot;schedule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;schedule_desc&quot;: &quot;描述可以为空&quot;
 }
 </pre>
                                                     </small>
@@ -3444,6 +2940,821 @@
 </div>
 
 
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 id="_projects__projectId__services__serviceId__rules" class="panel-title">/projects/{projectId}/services/{serviceId}/rules</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            
+
+                            <div class="panel-group">
+                                <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services__serviceId__rules">
+                
+                    <span class="badge badge_get">get</span>
+                
+                    <span class="badge badge_post">post</span>
+                
+                <span class="parent"></span>/projects/{projectId}/services/{serviceId}/rules
+            </a>
+        </h4>
+    </div>
+    <div id="panel__projects__projectId__services__serviceId__rules" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules_get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取业务规则列表
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__rules_get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules_get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__rules_get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules_get_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules_get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回业务规则列表，列表中的每个条目按以下定义：</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务规则&quot;,
+  &quot;properties&quot;: {
+    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;process_code&quot;: {
+      &quot;properties&quot;: {
+      }
+    },
+    &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Example:</strong>
+                                                                <pre>{
+  &quot;rule_id&quot;: 1,
+  &quot;rule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;rule_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules_post" class="list-group-item">
+                        <span class="badge badge_post">post</span>
+                        创建新业务规则，rule_id由服务器生成，此处不需提供
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__rules_post" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules_post_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__rules_post_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules_post_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                        <h3>Body</h3>
+                                        
+                                            <p><strong>Type: application/json</strong></p>
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Schema:</strong>
+                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务规则&quot;,
+  &quot;properties&quot;: {
+    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;process_code&quot;: {
+      &quot;properties&quot;: {
+      }
+    },
+    &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+}
+
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Example:</strong>
+                                                        <pre>{
+  &quot;rule_id&quot;: 1,
+  &quot;rule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;rule_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                        
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules_post_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>业务规则创建成功</p>
+
+
+                                            
+
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__projects__projectId__services__serviceId__rules__ruleId_">
+                
+                    <span class="badge badge_get">get</span>
+                
+                    <span class="badge badge_post">post</span>
+                
+                    <span class="badge badge_delete">delete</span>
+                
+                <span class="parent">/projects/{projectId}/services/{serviceId}/rules</span>/{ruleId}
+            </a>
+        </h4>
+    </div>
+    <div id="panel__projects__projectId__services__serviceId__rules__ruleId_" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules__ruleId__get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取单个业务规则
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__rules__ruleId__get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules__ruleId__get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__rules__ruleId__get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules__ruleId__get_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                                <li><strong>ruleId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules__ruleId__get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回对应的业务规则</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务规则&quot;,
+  &quot;properties&quot;: {
+    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;process_code&quot;: {
+      &quot;properties&quot;: {
+      }
+    },
+    &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Example:</strong>
+                                                                <pre>{
+  &quot;rule_id&quot;: 1,
+  &quot;rule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;rule_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules__ruleId__post" class="list-group-item">
+                        <span class="badge badge_post">post</span>
+                        更新业务规则
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__rules__ruleId__post" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules__ruleId__post_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__rules__ruleId__post_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules__ruleId__post_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                                <li><strong>ruleId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                        <h3>Body</h3>
+                                        
+                                            <p><strong>Type: application/json</strong></p>
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Schema:</strong>
+                                                        <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务规则&quot;,
+  &quot;properties&quot;: {
+    &quot;rule_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;rule_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;rule_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;process_code&quot;: {
+      &quot;properties&quot;: {
+      }
+    },
+    &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+}
+
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                            
+                                                <p>
+                                                    <small>
+                                                        <strong>Example:</strong>
+                                                        <pre>{
+  &quot;rule_id&quot;: 1,
+  &quot;rule_name&quot;: &quot;番茄一号大棚&quot;,
+  &quot;rule_desc&quot;: &quot;描述可以为空&quot;
+}
+</pre>
+                                                    </small>
+                                                </p>
+                                            
+                                        
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules__ruleId__post_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>业务规则更新成功</p>
+
+
+                                            
+
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                    <a data-toggle="collapse" href="#_projects__projectId__services__serviceId__rules__ruleId__delete" class="list-group-item">
+                        <span class="badge badge_delete">delete</span>
+                        删除业务规则
+                    </a>
+                    <div id="_projects__projectId__services__serviceId__rules__ruleId__delete" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_projects__projectId__services__serviceId__rules__ruleId__delete_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_projects__projectId__services__serviceId__rules__ruleId__delete_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_projects__projectId__services__serviceId__rules__ruleId__delete_request">
+                                    
+                                        <h3>URI Parameters</h3>
+                                        <ul>
+                                            
+                                                <li><strong>projectId</strong>: integer</li>
+                                            
+                                                <li><strong>serviceId</strong>: integer</li>
+                                            
+                                                <li><strong>ruleId</strong>: integer</li>
+                                            
+                                        </ul>
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_projects__projectId__services__serviceId__rules__ruleId__delete_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>业务规则删除成功</p>
+
+
+                                            
+
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 id="_servicetypes" class="panel-title">/servicetypes</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            
+
+                            <div class="panel-group">
+                                <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__servicetypes">
+                
+                    <span class="badge badge_get">get</span>
+                
+                <span class="parent"></span>/servicetypes
+            </a>
+        </h4>
+    </div>
+    <div id="panel__servicetypes" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_servicetypes_get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取平台支持的业务类型列表
+                    </a>
+                    <div id="_servicetypes_get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_servicetypes_get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_servicetypes_get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_servicetypes_get_request">
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_servicetypes_get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回业务类型列表</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务类型&quot;,
+  &quot;properties&quot;: {
+    &quot;service_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
+    &quot;service_type_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_desc&quot;: { &quot;type&quot;: &quot;string&quot; }
+  },
+  &quot;required&quot;: [ &quot;service_type_id&quot;, &quot;service_type_name&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 id="_componenttypes" class="panel-title">/componenttypes</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            
+
+                            <div class="panel-group">
+                                <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__componenttypes">
+                
+                    <span class="badge badge_get">get</span>
+                
+                <span class="parent"></span>/componenttypes
+            </a>
+        </h4>
+    </div>
+    <div id="panel__componenttypes" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_componenttypes_get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取平台支持的业务组件类型列表
+                    </a>
+                    <div id="_componenttypes_get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_componenttypes_get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_componenttypes_get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_componenttypes_get_request">
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_componenttypes_get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回业务组件类型列表</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务组件类型&quot;,
+  &quot;properties&quot;: {
+    &quot;component_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
+    &quot;component_type_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;component_type_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;device_types&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;description&quot;: &quot;此类业务组件允许关联的设备类型列表，列表中的每一项都对应于devicetype中的device_type_id&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;integer&quot;
+      }
+    }
+  },
+  &quot;required&quot;: [ &quot;component_type_id&quot;, &quot;component_type_name&quot;, &quot;device_types&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 id="_devicetypes" class="panel-title">/devicetypes</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            
+
+                            <div class="panel-group">
+                                <div class="panel panel-white">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="block collapsed" data-toggle="collapse" href="#panel__devicetypes">
+                
+                    <span class="badge badge_get">get</span>
+                
+                <span class="parent"></span>/devicetypes
+            </a>
+        </h4>
+    </div>
+    <div id="panel__devicetypes" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="list-group">
+                
+                    <a data-toggle="collapse" href="#_devicetypes_get" class="list-group-item">
+                        <span class="badge badge_get">get</span>
+                        获取平台支持的设备类型列表
+                    </a>
+                    <div id="_devicetypes_get" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#_devicetypes_get_request" data-toggle="tab">Request</a></li>
+                                
+                                    <li><a href="#_devicetypes_get_response" data-toggle="tab">Response</a></li>
+                                
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="_devicetypes_get_request">
+                                    
+
+                                    
+
+                                    
+                                </div>
+
+                                
+                                    <div class="tab-pane" id="_devicetypes_get_response">
+                                        
+                                            <h2>HTTP status code 200</h2>
+                                            <p>返回设备类型列表</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;业务类型&quot;,
+  &quot;properties&quot;: {
+    &quot;device_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
+    &quot;device_type_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;device_type_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;device_category&quot;: { &quot;type&quot;: &quot;string&quot; }
+  },
+  &quot;required&quot;: [ &quot;device_type_id&quot;, &quot;device_type_name&quot;, &quot;device_category&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                
+                                            
+                                        
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -4092,13 +4403,19 @@
                         
                             <li><a href="#_projects__projectId__gateways">/projects/{projectId}/gateways</a></li>
                         
+                            <li><a href="#_projects__projectId__services">/projects/{projectId}/services</a></li>
+                        
                             <li><a href="#_projects__projectId__gateways_gatewayId__devices">/projects/{projectId}/gateways{gatewayId}/devices</a></li>
                         
-                            <li><a href="#_projects__projectId__services">/projects/{projectId}/services</a></li>
+                            <li><a href="#_projects__projectId__services__serviceId__schedules">/projects/{projectId}/services/{serviceId}/schedules</a></li>
                         
                             <li><a href="#_projects__projectId__services__serviceId__rules">/projects/{projectId}/services/{serviceId}/rules</a></li>
                         
-                            <li><a href="#_projects__projectId__services__serviceId__schedules">/projects/{projectId}/services/{serviceId}/schedules</a></li>
+                            <li><a href="#_servicetypes">/servicetypes</a></li>
+                        
+                            <li><a href="#_componenttypes">/componenttypes</a></li>
+                        
+                            <li><a href="#_devicetypes">/devicetypes</a></li>
                         
                             <li><a href="#_projects__projectId__services__serviceId__components">/projects/{projectId}/services/{serviceId}/components</a></li>
                         

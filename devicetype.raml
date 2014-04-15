@@ -1,0 +1,11 @@
+#%RAML 0.8
+description: |
+
+get:
+  description: 获取平台支持的设备类型列表
+  responses:
+    200:
+      description: 返回设备类型列表
+      body:
+        application/json:
+          schema: !include schema/devicetype.json
