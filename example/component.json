@@ -1,0 +1,10 @@
+{
+  "component_id": 1,
+  "component_name": "温度监测组件",
+  "component_desc": "描述可以为空",
+  "component_type_id": 1101,
+  "project_id": 1,
+  "service_id": 1,
+  "team_id": 1,
+  "operation_params": "open"
+}

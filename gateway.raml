@@ -1,0 +1,74 @@
+#%RAML 0.8
+  uriParameters:
+   projectId:
+     type: integer
+  description: |
+    网关是一个物理实体，连接各种设备
+
+  get:
+    description: 获取网关列表
+    responses:
+      200:
+        description: 返回网关列表，列表中的每个条目按以下定义：
+        body:
+          application/json:
+            schema: !include schema/gateway.json
+            example: !include example/gateway.json
+
+  post:
+    description: 创建新网关，gateway_id由服务器生成，此处不需提供
+    body:
+      application/json:
+        schema: !include schema/gateway.json
+        example: !include example/gateway.json
+    responses:
+      200:
+        description: 网关创建成功
+
+  /{gatewayId}:
+    uriParameters:
+     gatewayId:
+       type: integer
+    get:
+      description: 获取单个网关
+      responses:
+        200:
+          description: 返回对应的网关
+          body:
+            application/json:
+              schema: !include schema/gateway.json
+              example: !include example/gateway.json
+
+    post:
+      description: 更新网关
+      body:
+        application/json:
+          schema: !include schema/gateway.json
+          example: !include example/gateway.json
+      responses:
+        200:
+          description: 网关更新成功
+
+    delete:
+      description: 删除网关
+      responses:
+        200:
+          description: 网关删除成功
+
+    /newkey:
+      get:
+        description: 获取新的网关授权码，这个授权码同时会更新到网关，下次网关将用这个码来登录到平台
+        responses:
+          200:
+            description: 返回生成的新授权码
+            body:
+              application/json:
+                schema: |
+                  { "$schema": "http://json-schema.org/schema",
+                    "type": "object",
+                    "description": "项目",
+                    "properties": {
+                      "gateway_key": { "type": "string" }
+                      },
+                    "required": [ "gateway_key" ]
+                  }

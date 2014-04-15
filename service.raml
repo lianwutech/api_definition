@@ -1,0 +1,57 @@
+#%RAML 0.8
+  uriParameters:
+   projectId:
+     type: integer
+  description: |
+    以业务为根
+
+  get:
+    description: 获取业务列表
+    responses:
+      200:
+        description: 返回业务列表，列表中的每个条目按以下定义：
+        body:
+          application/json:
+            schema: !include schema/service.json
+            example: !include example/service.json
+
+  post:
+    description: 创建新业务，service_id由服务器生成，此处不需提供
+    body:
+      application/json:
+        schema: !include schema/service.json
+        example: !include example/service.json
+    responses:
+      200:
+        description: 业务创建成功
+
+  /{serviceId}:
+    uriParameters:
+     serviceId:
+       type: integer
+    get:
+      description: 获取单个业务
+      responses:
+        200:
+          description: 返回对应的业务
+          body:
+            application/json:
+              schema: !include schema/service.json
+              example: !include example/service.json
+
+    post:
+      description: 更新业务
+      body:
+        application/json:
+          schema: !include schema/service.json
+          example: !include example/service.json
+      responses:
+        200:
+          description: 业务更新成功
+
+    delete:
+      description: 删除业务
+      responses:
+        200:
+          description: 业务删除成功
+

@@ -1,0 +1,83 @@
+#%RAML 0.8
+  uriParameters:
+   projectId:
+     type: integer
+   serviceId:
+     type: integer
+  description: |
+
+  get:
+    description: 获取组件列表
+    responses:
+      200:
+        description: 返回组件列表，列表中的每个条目按以下定义：
+        body:
+          application/json:
+            schema: !include schema/component.json
+            example: !include example/component.json
+
+  post:
+    description: 创建新组件，component_id由服务器生成，此处不需提供
+    body:
+      application/json:
+        schema: !include schema/component.json
+        example: !include example/component.json
+    responses:
+      200:
+        description: 组件创建成功
+
+  /{componentId}:
+    uriParameters:
+     componentId:
+       type: integer
+    get:
+      description: 获取单个组件
+      responses:
+        200:
+          description: 返回对应的组件
+          body:
+            application/json:
+              schema: !include schema/component.json
+              example: !include example/component.json
+
+    post:
+      description: 更新组件
+      body:
+        application/json:
+          schema: !include schema/component.json
+          example: !include example/component.json
+      responses:
+        200:
+          description: 组件更新成功
+
+    delete:
+      description: 删除组件
+      responses:
+        200:
+          description: 组件删除成功
+
+    /action:
+      post:
+        description: 对组件执行一个操作，比如浇水、排风等等，每种组件都定义了它能执行的操作。
+        body:
+          application/json:
+            schema: |
+              { "$schema": "http://json-schema/component.org/schema",
+                "type": "object",
+                "description": "业务组件操作",
+                "properties": {
+                  "operation_info": {
+                    "operation_code": { "type": "string" }
+                  }
+                },
+                "required": [ "operation_info" ]
+              }
+            example: |
+              {
+                "operation_info": {
+                  "operation_code": { "open" }
+                }
+              }
+        responses:
+          200:
+            description: 组件更新成功
