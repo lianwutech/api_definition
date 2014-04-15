@@ -26,15 +26,27 @@ documentation:
 
       2. 返回格式均为Json，参照API参考获知各字段信息
 
-traits:
-  - paged:
-      queryParameters:
-        page_size:
-          description: The number of items per page
-          type: number
-        page:
-          description: The page to return
-          type: number
+mediaType: application/json
+resourceTypes:
+  - base:
+      get?: &common
+        responses:
+          200:
+            description: 操作成功
+          304:
+            description: 没有更新的数据返回
+          400:
+            description: 非法的请求
+          401:
+            description: 验证失败
+          403:
+            description: 不允许该操作
+          404:
+            description: 资源找不到
+          500:
+            description: 服务器出错
+      post?: *common
+      delete?: *common
 
 /projects: !include project.raml
 /projects/{projectId}/gateways: !include gateway.raml

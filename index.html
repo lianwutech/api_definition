@@ -234,6 +234,54 @@
                                                 
                                             
                                         
+                                            <h2>HTTP status code 304</h2>
+                                            <p>没有更新的数据返回</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 400</h2>
+                                            <p>非法的请求</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 401</h2>
+                                            <p>验证失败</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 403</h2>
+                                            <p>不允许该操作</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 404</h2>
+                                            <p>资源找不到</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 500</h2>
+                                            <p>服务器出错</p>
+
+
+                                            
+
+                                            
+                                        
                                     </div>
                                 
                             </div>
@@ -242,7 +290,7 @@
                 
                     <a data-toggle="collapse" href="#_projects_post" class="list-group-item">
                         <span class="badge badge_post">post</span>
-                        创建新项目，project_id由服务器生成，此处不需提供
+                        创建新项目，project_id由服务器生成，此处不提供
                     </a>
                     <div id="_projects_post" class="panel-collapse collapse">
                         <div class="panel-body">
@@ -305,7 +353,80 @@
                                     <div class="tab-pane" id="_projects_post_response">
                                         
                                             <h2>HTTP status code 200</h2>
-                                            <p>项目创建成功</p>
+                                            <p>返回新创建的项目</p>
+
+
+                                            
+
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;项目&quot;,
+  &quot;properties&quot;: {
+    &quot;project_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
+    &quot;project_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;project_desc&quot;: { &quot;type&quot;: &quot;string&quot; }
+  },
+  &quot;required&quot;: [ &quot;project_id&quot;, &quot;project_name&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                
+                                            
+                                        
+                                            <h2>HTTP status code 304</h2>
+                                            <p>没有更新的数据返回</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 400</h2>
+                                            <p>非法的请求</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 401</h2>
+                                            <p>验证失败</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 403</h2>
+                                            <p>不允许该操作</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 404</h2>
+                                            <p>资源找不到</p>
+
+
+                                            
+
+                                            
+                                        
+                                            <h2>HTTP status code 500</h2>
+                                            <p>服务器出错</p>
 
 
                                             
@@ -500,11 +621,36 @@
                                     <div class="tab-pane" id="_projects__projectId__post_response">
                                         
                                             <h2>HTTP status code 200</h2>
-                                            <p>项目更新成功</p>
+                                            <p>返回更新后的项目</p>
 
 
                                             
 
+                                            
+                                                <h3>Body</h3>
+                                                
+                                                    <p><strong>Type: application/json</strong></p>
+                                                    
+                                                        <p>
+                                                            <small>
+                                                                <strong>Schema:</strong>
+                                                                <pre>{ &quot;$schema&quot;: &quot;http://json-schema.org/schema&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;description&quot;: &quot;项目&quot;,
+  &quot;properties&quot;: {
+    &quot;project_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
+    &quot;project_name&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;project_desc&quot;: { &quot;type&quot;: &quot;string&quot; }
+  },
+  &quot;required&quot;: [ &quot;project_id&quot;, &quot;project_name&quot; ]
+}
+
+</pre>
+                                                            </small>
+                                                        </p>
+                                                    
+                                                    
+                                                
                                             
                                         
                                     </div>
@@ -548,7 +694,7 @@
                                     <div class="tab-pane" id="_projects__projectId__delete_response">
                                         
                                             <h2>HTTP status code 200</h2>
-                                            <p>项目删除成功</p>
+                                            <p>业务删除成功</p>
 
 
                                             
@@ -662,7 +808,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -736,7 +882,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -861,7 +1007,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -937,7 +1083,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -1226,7 +1372,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -1302,7 +1448,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -1429,7 +1575,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -1507,7 +1653,7 @@
     &quot;gateway_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;gateway_key&quot;: { &quot;type&quot;: &quot;string&quot; }
   },
-  &quot;required&quot;: [ &quot;gateway_id&quot;, &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
+  &quot;required&quot;: [ &quot;gateway_name&quot;, &quot;gateway_key&quot; ]
 }
 
 </pre>
@@ -1796,15 +1942,26 @@
     &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
     &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
           &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
         }
       }
     }
   },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot; ]
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
 }
 </pre>
                                                             </small>
@@ -1875,15 +2032,26 @@
     &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
     &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
           &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
         }
       }
     }
   },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot; ]
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
 }
 </pre>
                                                     </small>
@@ -2005,15 +2173,26 @@
     &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
     &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
           &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
         }
       }
     }
   },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot; ]
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
 }
 </pre>
                                                             </small>
@@ -2086,15 +2265,26 @@
     &quot;service_id&quot;: { &quot;type&quot;: &quot;integer&quot; },
     &quot;service_name&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;service_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
+    &quot;service_type_id&quot;: {
+      &quot;description&quot;: &quot;业务类型，引用service_type&quot;,
+      &quot;type&quot;: &quot;integer&quot;
+    },
+    &quot;active_rule_id&quot;: {
+      &quot;description&quot;: &quot;当前生效的业务规则，引用service_rule&quot;,
+      &quot;type&quot;: &quot;integer&quot;,
+      &quot;default&quot;: 0
+    },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
+          &quot;description&quot;: &quot;auto=自动控制；manul=手动控制；close=关闭业务，不接收任何数据&quot;,
           &quot;enum&quot;: [ &quot;auto&quot;, &quot;manual&quot;, &quot;close&quot; ]
         }
       }
     }
   },
-  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot; ]
+  &quot;required&quot;: [ &quot;service_name&quot;, &quot;operation_params&quot;, &quot;service_desc&quot;, &quot;service_type_id&quot;, &quot;active_rule_id&quot; ]
 }
 </pre>
                                                     </small>
@@ -2285,11 +2475,12 @@
       }
     },
     &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
       }
     }
   },
-  &quot;required&quot;: [ &quot;rule_id&quot;, &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
 }
 
 </pre>
@@ -2368,11 +2559,12 @@
       }
     },
     &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
       }
     }
   },
-  &quot;required&quot;: [ &quot;rule_id&quot;, &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
 }
 
 </pre>
@@ -2502,11 +2694,12 @@
       }
     },
     &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
       }
     }
   },
-  &quot;required&quot;: [ &quot;rule_id&quot;, &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
 }
 
 </pre>
@@ -2587,11 +2780,12 @@
       }
     },
     &quot;process_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
       }
     }
   },
-  &quot;required&quot;: [ &quot;rule_id&quot;, &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
+  &quot;required&quot;: [ &quot;rule_name&quot;, &quot;process_code&quot;, &quot;process_params&quot; ]
 }
 
 </pre>
@@ -2805,9 +2999,8 @@
       }
     }
   },
-  &quot;required&quot;: [ &quot;schedule_id&quot;, &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
+  &quot;required&quot;: [ &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
 }
-
 </pre>
                                                             </small>
                                                         </p>
@@ -2904,9 +3097,8 @@
       }
     }
   },
-  &quot;required&quot;: [ &quot;schedule_id&quot;, &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
+  &quot;required&quot;: [ &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
 }
-
 </pre>
                                                     </small>
                                                 </p>
@@ -3054,9 +3246,8 @@
       }
     }
   },
-  &quot;required&quot;: [ &quot;schedule_id&quot;, &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
+  &quot;required&quot;: [ &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
 }
-
 </pre>
                                                             </small>
                                                         </p>
@@ -3155,9 +3346,8 @@
       }
     }
   },
-  &quot;required&quot;: [ &quot;schedule_id&quot;, &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
+  &quot;required&quot;: [ &quot;schedule_name&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_time&quot;, &quot;end_time&quot;, &quot;start_action&quot;, &quot;end_action&quot; ]
 }
-
 </pre>
                                                     </small>
                                                 </p>
@@ -3346,6 +3536,7 @@
     &quot;component_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;component_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
           &quot;enum&quot;: [&quot;open&quot;, &quot;close&quot;]
@@ -3433,6 +3624,7 @@
     &quot;component_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;component_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
           &quot;enum&quot;: [&quot;open&quot;, &quot;close&quot;]
@@ -3571,6 +3763,7 @@
     &quot;component_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;component_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
           &quot;enum&quot;: [&quot;open&quot;, &quot;close&quot;]
@@ -3660,6 +3853,7 @@
     &quot;component_desc&quot;: { &quot;type&quot;: &quot;string&quot; },
     &quot;component_type_id&quot;:  { &quot;type&quot;: &quot;integer&quot; },
     &quot;operation_params&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
       &quot;properties&quot;: {
         &quot;control_status&quot;: {
           &quot;enum&quot;: [&quot;open&quot;, &quot;close&quot;]
