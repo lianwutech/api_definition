@@ -1,0 +1,31 @@
+#%RAML 0.8
+title: Jambu管理API
+version: 1
+baseUri: http://api.jambu.io/v{version}/admin/
+documentation:
+ - title: 说明
+   content: |
+
+mediaType: application/json
+resourceTypes:
+  - base:
+      get?: &common
+        responses:
+          200:
+            description: 操作成功
+          304:
+            description: 没有更新的数据返回
+          400:
+            description: 非法的请求
+          401:
+            description: 验证失败
+          403:
+            description: 不允许该操作
+          404:
+            description: 资源找不到
+          500:
+            description: 服务器出错
+      post?: *common
+      delete?: *common
+
+/drivers: !include driver.raml

@@ -1,7 +1,7 @@
 #%RAML 0.8
-title: 莲雾云API
+title: Jambu
 version: 1
-baseUri: http://api.lianwutech.com/{version}
+baseUri: http://api.jambu.io/{version}
 documentation:
  - title: 说明
    content: |
@@ -56,7 +56,6 @@ resourceTypes:
 /projects/{projectId}/services/{serviceId}/schedules: !include schedule.raml
 /projects/{projectId}/services/{serviceId}/components: !include component.raml
 
-/servicetypes: !include servicetype.raml
 /componenttypes: !include componenttype.raml
 /devicetypes: !include devicetype.raml
 

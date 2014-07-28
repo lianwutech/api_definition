@@ -1,0 +1,22 @@
+type: base
+description: 本地驱动库管理
+
+get:
+  description: 获取本地驱动程序列表
+  responses:
+    200:
+      description: 返回驱动程序列表，列表中的每个条目按以下定义：
+      body:
+        schema: !include driver.json
+
+/{driverId}:
+  uriParameters:
+    driverId:
+      type: integer
+  get:
+    description: 获取本地驱动程序列表
+    responses:
+      200:
+        description: 返回驱动程序列表，列表中的每个条目按以下定义：
+        body:
+          schema: !include driver.json
